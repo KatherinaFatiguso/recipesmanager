@@ -1,7 +1,7 @@
+require "./recipe_directory.rb"
 require "./method.rb"
 require "./step.rb"
 require "./recipe.rb"
-require "./recipe_directory.rb"
 require "./measurement.rb"
 require "./ingredient.rb"
 
