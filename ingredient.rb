@@ -9,7 +9,11 @@ class Ingredient
   end
 
   def to_s
-    "- #{ingredient} #{measurement}"
+    "- #{@ingredient} #{@measurement}"
+  end
+
+  def inspect
+    to_s
   end
 
   def self.all

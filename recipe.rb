@@ -12,6 +12,17 @@ $roast_lamb_method.steps << Step.new(3, "Put the lamb on top of the potatoes.")
 $roast_lamb_method.steps << Step.new(4, "Put in the oven for 200 c for 30 mins.")
 
 
+$apple_pie_ingredients =
+  [Ingredient.all[:apple],
+  Ingredient.all[:self_rising_flour],
+  Ingredient.all[:sugar]]
+
+  $roast_lamb_ingredients =
+    [Ingredient.all[:lamb],
+    Ingredient.all[:potatoes],
+    Ingredient.all[:garlics],
+    Ingredient.all[:salt]]
+
 class Recipe
   attr_accessor :title, :ingredients, :method, :type
 
@@ -24,19 +35,17 @@ class Recipe
 
   def to_s
     string = []
-    string << "#{@title} - #{@type}"
+    string << "\n#{@title} - #{@type}"
     string << "--------------------\n"
-    string << "Ingredients: \n#{@ingredients}"
+    string << "Ingredients:"
+    @ingredients.each { |ing| string << ing.to_s }
     string << "Method: \n#{@method}"
     string.join("\n")
   end
 
   def self.all
-    [ Recipe.new('Apple pie', ["a", "b", "c", "d"], $apple_pie_method, 'Breakfast'),
-    Recipe.new('Roast Lamb', ["a", "b", "c", "d"], $roast_lamb_method, 'Dinner') ]
+    [ Recipe.new('Apple pie', $apple_pie_ingredients, $apple_pie_method, 'Breakfast'),
+    Recipe.new('Roast Lamb', $roast_lamb_ingredients, $roast_lamb_method, 'Dinner') ]
   end
 
-  # def self.find_by(what, name)
-  #   all.select { |recipe| recipe.send(what) == name }
-  # end
 end

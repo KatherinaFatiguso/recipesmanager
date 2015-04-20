@@ -9,7 +9,7 @@ class Measurement
   end
 
   def to_s
-    "#{unit} #{metrix}"
+    "#{@unit} #{@metrix}"
   end
 
   def self.all

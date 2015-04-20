@@ -1,6 +1,6 @@
 class Instructions
   attr_accessor :steps
-  
+
   def initialize
     @steps = []
   end
