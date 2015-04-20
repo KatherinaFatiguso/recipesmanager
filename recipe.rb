@@ -43,6 +43,14 @@ class Recipe
     string.join("\n")
   end
 
+  def self.select_by_name(name)
+    all.select { |recipe| recipe.title == name }
+  end
+
+  def self.select_by_type(type)
+    all.select { |recipe| recipe.type == type }
+  end
+  
   def self.all
     [ Recipe.new('Apple pie', $apple_pie_ingredients, $apple_pie_method, 'Breakfast'),
     Recipe.new('Roast Lamb', $roast_lamb_ingredients, $roast_lamb_method, 'Dinner') ]
