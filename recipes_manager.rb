@@ -1,3 +1,8 @@
+require './measurement.rb'
+require './ingredient.rb'
+
+
+
 #Recipes Manager
 class Recipe
   attr_accessor :title, :ingredients, :method, :type
@@ -29,9 +34,10 @@ class Recipe
     string
   end
 
+
   def self.all
     [ Recipe.new('Apple pie',
-      ['Two apples', 'two cups of self-rising flour', '100gr sugar', 'three eggs'],
+      [Ingredient.all[:apple], Ingredient.all[:self_rising_flour], Ingredient.all[:sugar]],
       { 1 => "Get apples.",
         2 => "Peel, steam and mash apples.",
         3 => "Mix sugar, eggs and flour into dough.",
@@ -39,7 +45,7 @@ class Recipe
         5 => "Bake it 180 c for 30 mins."},
       'Breakfast'),
       Recipe.new('Roast Lamb',
-      ['1kg prime lamb', 'three potatoes', '2 garlics', '1tsp salt'],
+      [Ingredient.all[:lamb], Ingredient.all[:potatoes], Ingredient.all[:garlics], Ingredient.all[:salt]],
       { 1 => "Crush garlics, add salt and rub it to the lamb.",
         2 => "Peel, chop and arrange potatoes on ovenproof tray.",
         3 => "Put the lamb on top of the potatoes.",
@@ -55,6 +61,9 @@ class Recipe
 
 end #end of Recipe class
 
+
+#apple = Ingredients.new('apple', 2, "items")
+#puts apple
 
 print "All Recipes\n"
 print "===========\n"
