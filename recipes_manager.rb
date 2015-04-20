@@ -6,10 +6,6 @@ require "./measurement.rb"
 require "./ingredient.rb"
 
 # Recipes Manager
-#>>>>>>> 75da52ca8175a3a302e61f5533738ea73bd62eea
-
-#apple = Ingredients.new('apple', 2, "items")
-#puts apple
 
 print "All Recipes\n"
 print "===========\n"
